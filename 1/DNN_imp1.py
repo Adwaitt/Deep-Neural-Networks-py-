@@ -37,7 +37,7 @@ x,xt,y,yt=x.T,xt.T,y.T,yt.T
 def iniparams(layer_dims):
     params={}
     for l in range(1,len(layer_dims)):
-        params['W'+str(l)]=np.random.randn(layer_dims[l],layer_dims[l-1])*0.01
+        params['W'+str(l)]=np.random.randn(layer_dims[l],layer_dims[l-1])*np.sqrt(2/layer_dims[l-1])
         params['b'+str(l)]=np.zeros((layer_dims[l],1))
     return params
 
